@@ -2,8 +2,19 @@
 -- Versión 0.1 --
 -- Cambios:   --
 
+/* Comando entrada para XAMPP MySQL
+
+   mysql -u root
+   DROP DATABASE IF EXISTS SMALLCOMPANY;
+   CREATE DATABASE SMALLCOMPANY;
+   USE SMALLCOMPANY;
+
+*/
+
 DROP DATABASE IF EXISTS SMALLCOMPANY;
 CREATE DATABASE SMALLCOMPANY;
+USE SMALLCOMPANY;
+
 
 CREATE TABLE Competencias (
     ID_Competencia int(15) not null,
