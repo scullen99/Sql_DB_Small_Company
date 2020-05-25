@@ -17,96 +17,117 @@ CREATE TABLE Competencias (
 CREATE TABLE Departamentos (
 
 
+    PRIMARY KEY ()
 );
 
 CREATE TABLE Edificio (
 
 
+
+    PRIMARY KEY ()
 );
 
 CREATE TABLE EquiposElectronicos (
 
 
+    
+    PRIMARY KEY ()
 );
 
 CREATE TABLE Idiomas (
 
 
+    PRIMARY KEY ()
 );
 
 CREATE TABLE Proyectos (
 
 
+    PRIMARY KEY ()
 );
 
 CREATE TABLE MaterialesOficina (
 
 
+    PRIMARY KEY ()
 );
 
 CREATE TABLE Empleados (
 
 
+    PRIMARY KEY ()
 );
 
 -- Revisar nombre y tabla --
 CREATE TABLE Educacion (
 
 
+    PRIMARY KEY ()
 );
 
 CREATE TABLE AsignacionEquiposMateriales (
 
 
+    PRIMARY KEY ()
 );
 
 CREATE TABLE CompetenciasEmpleados (
 
 
+    PRIMARY KEY ()
 );
 
 
 CREATE TABLE Cursos (
 
 
+    PRIMARY KEY ()
 );
 
 CREATE TABLE Reuniones (
 
-
+    PRIMARY KEY ()
 );
 
 CREATE TABLE AsignacionEdificiosTemporalesRazon (
 
 
+    PRIMARY KEY ()
 );
 
 CREATE TABLE AsignacionEdificiosTemporales (
 
 
+    PRIMARY KEY ()
 );
 
 CREATE TABLE EdificioEmpleados (
 
 
+    PRIMARY KEY ()
 );
 
 CREATE TABLE Hijos (
 
 
+    PRIMARY KEY ()
 );
 
 CREATE TABLE IdiomasEmpleados (
 
 
+    PRIMARY KEY ()
 );
 
 CREATE TABLE Nomina (
 
 
+
+    PRIMARY KEY ()
 );
 
 CREATE TABLE ProyectosEmpleados (
 
 
+    PRIMARY KEY ()
 );
