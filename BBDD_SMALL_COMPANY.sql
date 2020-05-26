@@ -1,5 +1,5 @@
 -- BBDD Pequeña Empresa - Sergio Esteban Tarrero --
--- Versión 0.1 --
+-- Versión 0.2 --
 -- Cambios:   --
 
 /* Comando entrada para XAMPP MySQL
@@ -26,16 +26,21 @@ CREATE TABLE Competencias (
 );
 
 CREATE TABLE Departamentos (
+    ID_Departamento int(11) not null,
+    Departamento varchar(100) not null,
+    subDivision varchar(100) not null,
 
-
-    PRIMARY KEY ()
+    PRIMARY KEY (ID_Departamento)
 );
 
 CREATE TABLE Edificio (
+    ID int(11) not null auto_increment,
+    Planta int(10) unsigned not null,
+    Sala int(10) unsigned not null,
+    Puesto int(10) unsigned not null,
+    Asignado enum('si','no') not null default 'no',
 
-
-
-    PRIMARY KEY ()
+    PRIMARY KEY (ID)
 );
 
 CREATE TABLE EquiposElectronicos (
@@ -46,9 +51,10 @@ CREATE TABLE EquiposElectronicos (
 );
 
 CREATE TABLE Idiomas (
+    ID_Idioma int(11) not null,
+    Idioma varchar(50) not null,
 
-
-    PRIMARY KEY ()
+    PRIMARY KEY (ID_Idioma)
 );
 
 CREATE TABLE Proyectos (
