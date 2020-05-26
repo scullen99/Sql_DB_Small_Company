@@ -16,3 +16,12 @@ Subir el sueldo 2000 € al año a los empleados con más de 15 años de antigü
 Querie 5:
 Hacer todas las actualizaciones necesarias para cerrar un proyecto sin despedir a nadie, y repartiendo
 el presupuesto, si quedara, entre el resto de los proyectos del departamento.
+
+Querie 6:
+Obtener la lista de proyectos con menos de 4 empleados
+
+Querie 7:
+Se quieren buscar cinco puestos para los empleados de un proyecto, buscar las salas en las que sería posible ubicarles, todos en la misma sala.
+
+Querie 8:
+Obtener para cada proyecto el empleado de menos antigüedad.
