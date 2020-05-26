@@ -3,9 +3,3 @@
 3) A final de año el IPC sube un 1,2%, aplicarlo al sueldo de todos los empleados.
 4) Subir el sueldo 2000 € al año a los empleados con más de 15 años de antigüedad y sueldo inferior a 25.000€.
 5) Hacer todas las actualizaciones necesarias para cerrar un proyecto sin despedir a nadie, y repartiendo el presupuesto, si quedara, entre el resto de los proyectos del departamento.
-
-1) It is necessary to pre-retire two people: estimate the least expensive ones taking into account the age, at 65 they retire, and that for each year of service 15% of the annual gross salary must be paid as compensation.
-2) A new project is going to start with a budget of 150,000 euros for two years and 4 people are needed, find out if these people are available according to the available budget.
-3) At the end of the year the CPI rises 1.2%, applying it to the salary of all employees.
-4) Raise the salary € 2000 a year to employees over 15 years old and salary less than € 25,000.
-5) Make all the necessary updates to close a project without firing anyone, and dividing the budget, if any, among the rest of the department's projects.
