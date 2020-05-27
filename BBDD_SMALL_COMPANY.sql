@@ -200,3 +200,33 @@ CREATE TABLE ProyectosEmpleados (
 
     PRIMARY KEY (ID_Proyecto_Empleado)
 );
+
+CREATE TABLE prueba (
+
+    ID_Prueba int(11) not null,
+    Nombre_Prueba varchar(50) not null,
+
+);
+
+-- Comandos borrar tabla, crear tabla y añadir valores --
+
+/*
+
+DROP TABLE smallcompany.prueba CASCADE;
+
+CREATE TABLE prueba (
+
+	id_prueba varchar(100) NOT NULL,
+	nombre_pruena varchar(100) NOT NULL,
+
+    PRIMARY KEY (id_prueba)
+);
+
+INSERT INTO smallcompany.prueba (id_prueba,nombre_pruena)
+	VALUES ('1','prueba 1');
+INSERT INTO smallcompany.prueba (id_prueba,nombre_pruena)
+	VALUES ('2','prueba 2');
+INSERT INTO smallcompany.prueba (id_prueba,nombre_pruena)
+	VALUES ('3','prueba 3');
+
+*/
