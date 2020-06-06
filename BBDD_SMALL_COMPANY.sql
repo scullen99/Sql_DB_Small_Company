@@ -1,6 +1,6 @@
 -- BBDD Pequeña Empresa - Sergio Esteban Tarrero --
+-- https://github.com/scullen99/bbdd_small_company.git --
 -- Versión 0.5 --
--- Cambios:   --
 
 /* Comando entrada para XAMPP MySQL
 
@@ -15,7 +15,7 @@ DROP DATABASE IF EXISTS SMALLCOMPANY;
 CREATE DATABASE SMALLCOMPANY;
 USE SMALLCOMPANY;
 
-
+-- Creación Tabla Competencias --
 CREATE TABLE Competencias (
 
     ID_Competencia int(11) not null,
@@ -27,6 +27,9 @@ CREATE TABLE Competencias (
 
 );
 
+-- Añadir Datos a la Tabla Competencias --
+
+-- Creación Tabla Departamentos --
 CREATE TABLE Departamentos (
 
     ID_Departamento int(11) not null,
@@ -37,6 +40,9 @@ CREATE TABLE Departamentos (
 
 );
 
+-- Añadir Datos a la Tabla Departamentos --
+
+-- Creación Tabla  --
 CREATE TABLE Edificio (
 
     ID_Edificio int(11) not null auto_increment,
@@ -49,6 +55,9 @@ CREATE TABLE Edificio (
 
 );
 
+-- Añadir Datos a la Tabla  --
+
+-- Creación Tabla  --
 CREATE TABLE EquiposElectronicos (
 
     ID_Equipo_Electronico int(11) not null,
@@ -64,15 +73,30 @@ CREATE TABLE EquiposElectronicos (
 
 );
 
+-- Añadir Datos a la Tabla  --
+
+-- Creación Tabla  --
 CREATE TABLE Idiomas (
 
     ID_Idioma int(11) not null,
     Idioma varchar(100) not null,
 
     PRIMARY KEY (ID_Idioma)
-
 );
 
+-- Añadir Datos a la Tabla  --
+INSERT INTO idiomas (ID_Idioma,Idioma) VALUES 
+(1,'Espanol')
+,(2,'Ingles')
+,(3,'Italiano')
+,(4,'Chino')
+,(5,'Frances')
+,(6,'Panyabi')
+,(7,'Japones')
+,(8,'Bengali')
+;
+
+-- Creación Tabla  --
 CREATE TABLE Proyectos (
 
     ID_Proyecto int(11) not null,
@@ -88,6 +112,9 @@ CREATE TABLE Proyectos (
 
 );
 
+-- Añadir Datos a la Tabla  --
+
+-- Creación Tabla  --
 CREATE TABLE MaterialesOficina (
 
     Id_Materiales_Oficina int(11) not null,
@@ -100,6 +127,9 @@ CREATE TABLE MaterialesOficina (
 
 );
 
+-- Añadir Datos a la Tabla  --
+
+-- Creación Tabla  --
 CREATE TABLE Empleados (
 
     ID_Empleado int (11) not null,
@@ -119,7 +149,9 @@ CREATE TABLE Empleados (
 
 );
 
--- Revisar nombre y tabla --
+-- Añadir Datos a la Tabla  --
+
+-- Creación Tabla  --
 CREATE TABLE Educacion (
 
     ID_Educacion int (11) not null,
@@ -133,6 +165,9 @@ CREATE TABLE Educacion (
 
 );
 
+-- Añadir Datos a la Tabla  --
+
+-- Creación Tabla  --
 CREATE TABLE AsignacionEquiposMateriales (
 
     ID_Asignacion_Equipos_Materiales int(11) not null auto_increment,
@@ -150,6 +185,9 @@ CREATE TABLE AsignacionEquiposMateriales (
 
 );
 
+-- Añadir Datos a la Tabla  --
+
+-- Creación Tabla  --
 CREATE TABLE CompetenciasEmpleados (
 
     ID_Compenecia_Empleado int(11) not null,
@@ -163,7 +201,9 @@ CREATE TABLE CompetenciasEmpleados (
 
 );
 
+-- Añadir Datos a la Tabla  --
 
+-- Creación Tabla  --
 CREATE TABLE Cursos (
 
     ID_Curso int(11) not null,
@@ -177,6 +217,9 @@ CREATE TABLE Cursos (
 
 );
 
+-- Añadir Datos a la Tabla  --
+
+-- Creación Tabla  --
 CREATE TABLE Reuniones (
 
     ID_Reunion int(11) not null auto_increment,
@@ -189,6 +232,9 @@ CREATE TABLE Reuniones (
 
 );
 
+-- Añadir Datos a la Tabla  --
+
+-- Creación Tabla  --
 CREATE TABLE AsignacionEdificiosTemporalesRazon (
 
     ID_Asignacion_Edificio_Temporal_Razon int(11) not null,
@@ -203,6 +249,9 @@ CREATE TABLE AsignacionEdificiosTemporalesRazon (
 
 );
 
+-- Añadir Datos a la Tabla  --
+
+-- Creación Tabla  --
 CREATE TABLE AsignacionEdificiosTemporales (
 
     ID_Asignacion_Edificio_Temporal int(11) not null auto_increment,
@@ -214,6 +263,9 @@ CREATE TABLE AsignacionEdificiosTemporales (
 
 );
 
+-- Añadir Datos a la Tabla  --
+
+-- Creación Tabla  --
 CREATE TABLE EdificioEmpleados (
 
     ID_Edificio_Empleado int(11) not null auto_increment,
@@ -226,6 +278,9 @@ CREATE TABLE EdificioEmpleados (
 
 );
 
+-- Añadir Datos a la Tabla  --
+
+-- Creación Tabla  --
 CREATE TABLE Hijos (
 
     ID_Hijo int(11) not null,
@@ -239,6 +294,9 @@ CREATE TABLE Hijos (
 
 );
 
+-- Añadir Datos a la Tabla  --
+
+-- Creación Tabla  --
 CREATE TABLE IdiomasEmpleados (
 
     ID_Idioma_Empleado int(11) not null,
@@ -250,6 +308,9 @@ CREATE TABLE IdiomasEmpleados (
 
 );
 
+-- Añadir Datos a la Tabla  --
+
+-- Creación Tabla  --
 CREATE TABLE Nomina (
 
     ID_Nomina int(11) not null,
@@ -264,6 +325,9 @@ CREATE TABLE Nomina (
 
 );
 
+-- Añadir Datos a la Tabla  --
+
+-- Creación Tabla  --
 CREATE TABLE ProyectosEmpleados (
 
     ID_Proyecto_Empleado int(11) not null,
@@ -277,6 +341,7 @@ CREATE TABLE ProyectosEmpleados (
 
 );
 
+-- Añadir Datos a la Tabla  --
 
 -----------------------------------------------------------------------
 
