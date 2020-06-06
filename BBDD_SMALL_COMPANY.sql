@@ -18,10 +18,10 @@ USE SMALLCOMPANY;
 
 CREATE TABLE Competencias (
 
-    ID_Competencia int(15) not null,
-    Tipo varchar(50) not null,
-    Competencia varchar(50) not null,
-    AreaProfesional varchar(50) not null,
+    ID_Competencia int(11) not null,
+    Tipo varchar(100) not null,
+    Competencia varchar(100) not null,
+    AreaProfesional varchar(100) not null,
     
     PRIMARY KEY (ID_Competencia)
 );
@@ -37,13 +37,13 @@ CREATE TABLE Departamentos (
 
 CREATE TABLE Edificio (
 
-    ID int(11) not null auto_increment,
-    Planta int(10) unsigned not null,
-    Sala int(10) unsigned not null,
-    Puesto int(10) unsigned not null,
+    ID_Edificio int(11) not null auto_increment,
+    Planta int(11) unsigned not null,
+    Sala int(11) unsigned not null,
+    Puesto int(11) unsigned not null,
     Asignado enum('si','no') not null default 'no',
 
-    PRIMARY KEY (ID)
+    PRIMARY KEY (ID_Edificio)
 );
 
 CREATE TABLE EquiposElectronicos (
@@ -63,7 +63,7 @@ CREATE TABLE EquiposElectronicos (
 CREATE TABLE Idiomas (
 
     ID_Idioma int(11) not null,
-    Idioma varchar(50) not null,
+    Idioma varchar(100) not null,
 
     PRIMARY KEY (ID_Idioma)
 );
@@ -71,7 +71,7 @@ CREATE TABLE Idiomas (
 CREATE TABLE Proyectos (
 
     ID_Proyecto int(11) not null,
-    Nombre varchar(30) not null,
+    Nombre varchar(100) not null,
     Fecha_Inicio date not null,
     Fecha_Inicio_Real date default null,
     Fecha_Fin date not null,
@@ -95,18 +95,18 @@ CREATE TABLE MaterialesOficina (
 
 CREATE TABLE Empleados (
 
-    ID_Empleado
-    Dni
-    Nombre
-    Telefono
-    Numero_Seguridad_Social
-    Categoria_Profesional
-    Situacion_Familiar
-    Sueldo
-    Numero_Cuenta_Bancaria
-    Fecha_Ingreso
-    Fecha_Nacimiento
-    ID_Departamento
+    ID_Empleado int (11) not null,
+    Dni varchar(10) not null,
+    Nombre varchar(100) not null,
+    Telefono varchar(100) not null,
+    Numero_Seguridad_Social int(11) not null,
+    Categoria_Profesional varchar(100) not null,
+    Situacion_Familiar enum("Soltero", "Casado", "Divorciado") not null default 'Casado',
+    Sueldo double not null,
+    Numero_Cuenta_Bancaria varchar(45) not null,
+    Fecha_Ingreso date not null,
+    Fecha_Nacimiento date not null,
+    ID_Departamento int (11) not null,
 
     PRIMARY KEY (ID_Empleado)
 );
@@ -114,28 +114,28 @@ CREATE TABLE Empleados (
 -- Revisar nombre y tabla --
 CREATE TABLE Educacion (
 
-    ID_Educacion
-    ID_Empleado
-    Titulo
-    Institucion
-    Nivel
-    Fecha_Graduacion
+    ID_Educacion int (11) not null,
+    ID_Empleado int (11) not null,
+    Titulo varchar(100) not null,
+    Institucion varchar(100) not null,
+    Nivel varchar(100) not null,
+    Fecha_Graduacion date not null,
 
     PRIMARY KEY (ID_Educacion)
 );
 
 CREATE TABLE AsignacionEquiposMateriales (
 
-    ID_Asignacion_Equipos_Materiales
-    Tipo
-    ID_Equipo
-    ID_Material
+    ID_Asignacion_Equipos_Materiales int(11) not null auto_increment,
+    Tipo enum('Equipo', 'Material') not null default 'Equipo',
+    ID_Equipo int(11) default not null,
+    ID_Material int(11) default not null,
     Asignado
-    ID_Empleado
-    ID_Proyecto
-    Sala
-    Fecha_Inicio
-    Fecha_Fin
+    ID_Empleado int(11) default not null,
+    ID_Proyecto int(11) default not null,
+    Sala int(11) unsigned default not null,
+    Fecha_Inicio date not null,
+    Fecha_Fin date null,
 
 
     PRIMARY KEY (ID_Asignacion_Equipos_Materiales)
