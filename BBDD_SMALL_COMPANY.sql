@@ -95,27 +95,63 @@ CREATE TABLE MaterialesOficina (
 
 CREATE TABLE Empleados (
 
+    ID_Empleado
+    Dni
+    Nombre
+    Telefono
+    Numero_Seguridad_Social
+    Categoria_Profesional
+    Situacion_Familiar
+    Sueldo
+    Numero_Cuenta_Bancaria
+    Fecha_Ingreso
+    Fecha_Nacimiento
+    ID_Departamento
 
-    PRIMARY KEY ()
+    PRIMARY KEY (ID_Empleado)
 );
 
 -- Revisar nombre y tabla --
 CREATE TABLE Educacion (
 
+    ID_Educacion
+    ID_Empleado
+    Titulo
+    Institucion
+    Nivel
+    Fecha_Graduacion
 
-    PRIMARY KEY ()
+    PRIMARY KEY (ID_Educacion)
 );
 
 CREATE TABLE AsignacionEquiposMateriales (
 
+    ID_Asignacion_Equipos_Materiales
+    Tipo
+    ID_Equipo
+    ID_Material
+    Asignado
+    ID_Empleado
+    ID_Proyecto
+    Sala
+    Fecha_Inicio
+    Fecha_Fin
 
-    PRIMARY KEY ()
+
+    PRIMARY KEY (ID_Asignacion_Equipos_Materiales)
 );
 
 CREATE TABLE CompetenciasEmpleados (
 
+    ID_Compenecia_Empleado
+    ID_Competencia
+    ID_Empleado
+    Nivel_Requerido
+    Nivel_Alcanzado
+    Fecha_Evaluacion
 
-    PRIMARY KEY ()
+
+    PRIMARY KEY (ID_Compenecia_Empleado)
 );
 
 
@@ -133,25 +169,50 @@ CREATE TABLE Cursos (
 
 CREATE TABLE Reuniones (
 
-    PRIMARY KEY ()
+    ID_Reunion
+    Titulo
+    Fecha_Hora_Inicio
+    Fecha_Hora_Fin
+    ID_Responsable
+
+    PRIMARY KEY (ID_Reunion)
 );
 
 CREATE TABLE AsignacionEdificiosTemporalesRazon (
 
+    ID_Asignacion_Edificio_Temporal_Razon
+    Razon
+    Fecha_Hora_Inicio
+    Fecha_Hora_Fin
+    ID_Curso
+    ID_Reunion
+    ID_Empleado_Responsable
 
-    PRIMARY KEY ()
+
+    PRIMARY KEY (ID_Asignacion_Edificio_Temporal_Razon)
 );
 
 CREATE TABLE AsignacionEdificiosTemporales (
 
+    ID_Asignacion_Edificio_Temporal
+    Puesto
+    ID_Empleado
+    ID_Razon
 
-    PRIMARY KEY ()
+
+    PRIMARY KEY (ID_Asignacion_Edificio_Temporal)
 );
 
 CREATE TABLE EdificioEmpleados (
 
+    ID_Edificio_Empleado
+    Puesto
+    ID_Empleado
+    Fecha_Asignacion
+    Fecha_Entrega
 
-    PRIMARY KEY ()
+
+    PRIMARY KEY (ID_Edificio_Empleado)
 );
 
 CREATE TABLE Hijos (
@@ -200,6 +261,11 @@ CREATE TABLE ProyectosEmpleados (
 
     PRIMARY KEY (ID_Proyecto_Empleado)
 );
+
+
+----------------------------------------------------------------
+
+
 
 CREATE TABLE prueba (
 
