@@ -4,8 +4,8 @@ Creada por Sergio Esteban Tarrero
 
 # Puntos:
 
-- [ ] Crear BBDD
-- [ ] Asignación Primary Keys
+- [ X ] Crear BBDD
+- [ X ] Asignación Primary Keys
 - [ ] Asignación Foreign Keys
 - [ ] Queries
 - [ ] Diagrama ER
