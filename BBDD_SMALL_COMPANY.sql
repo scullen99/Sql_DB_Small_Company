@@ -1,5 +1,5 @@
 -- BBDD Pequeña Empresa - Sergio Esteban Tarrero --
--- Versión 0.2 --
+-- Versión 0.5 --
 -- Cambios:   --
 
 /* Comando entrada para XAMPP MySQL
@@ -274,7 +274,7 @@ CREATE TABLE ProyectosEmpleados (
 
 
     PRIMARY KEY (ID_Proyecto_Empleado)
-    
+
 );
 
 
