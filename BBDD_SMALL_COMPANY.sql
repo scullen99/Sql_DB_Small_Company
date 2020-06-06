@@ -24,6 +24,7 @@ CREATE TABLE Competencias (
     AreaProfesional varchar(100) not null,
     
     PRIMARY KEY (ID_Competencia)
+
 );
 
 CREATE TABLE Departamentos (
@@ -33,6 +34,7 @@ CREATE TABLE Departamentos (
     subDivision varchar(100) not null,
 
     PRIMARY KEY (ID_Departamento)
+
 );
 
 CREATE TABLE Edificio (
@@ -44,6 +46,7 @@ CREATE TABLE Edificio (
     Asignado enum('si','no') not null default 'no',
 
     PRIMARY KEY (ID_Edificio)
+
 );
 
 CREATE TABLE EquiposElectronicos (
@@ -58,6 +61,7 @@ CREATE TABLE EquiposElectronicos (
     Codigo varchar(100) not null,
 
     PRIMARY KEY (ID_Equipo_Electronico)
+
 );
 
 CREATE TABLE Idiomas (
@@ -66,6 +70,7 @@ CREATE TABLE Idiomas (
     Idioma varchar(100) not null,
 
     PRIMARY KEY (ID_Idioma)
+
 );
 
 CREATE TABLE Proyectos (
@@ -80,6 +85,7 @@ CREATE TABLE Proyectos (
     Presupuesto double not null,
 
     PRIMARY KEY (ID_Proyecto)
+
 );
 
 CREATE TABLE MaterialesOficina (
@@ -91,6 +97,7 @@ CREATE TABLE MaterialesOficina (
     Fecha_Compra date not null,
 
     PRIMARY KEY (Id_Materiales_Oficina)
+
 );
 
 CREATE TABLE Empleados (
@@ -109,6 +116,7 @@ CREATE TABLE Empleados (
     ID_Departamento int (11) not null,
 
     PRIMARY KEY (ID_Empleado)
+
 );
 
 -- Revisar nombre y tabla --
@@ -122,6 +130,7 @@ CREATE TABLE Educacion (
     Fecha_Graduacion date not null,
 
     PRIMARY KEY (ID_Educacion)
+
 );
 
 CREATE TABLE AsignacionEquiposMateriales (
@@ -130,28 +139,28 @@ CREATE TABLE AsignacionEquiposMateriales (
     Tipo enum('Equipo', 'Material') not null default 'Equipo',
     ID_Equipo int(11) default not null,
     ID_Material int(11) default not null,
-    Asignado
+    Asignado enum('Empleado', 'Proyecto', 'Sala') not null default 'Empleado',
     ID_Empleado int(11) default not null,
     ID_Proyecto int(11) default not null,
     Sala int(11) unsigned default not null,
     Fecha_Inicio date not null,
     Fecha_Fin date null,
 
-
     PRIMARY KEY (ID_Asignacion_Equipos_Materiales)
+
 );
 
 CREATE TABLE CompetenciasEmpleados (
 
-    ID_Compenecia_Empleado
-    ID_Competencia
-    ID_Empleado
-    Nivel_Requerido
-    Nivel_Alcanzado
-    Fecha_Evaluacion
-
+    ID_Compenecia_Empleado int(11) not null,
+    ID_Competencia int(11) not null,
+    ID_Empleado int(11) not null,
+    Nivel_Requerido int(11) unsigned not null,
+    Nivel_Alcanzado int(11) unsigned not null,
+    Fecha_Evaluacion date not null,
 
     PRIMARY KEY (ID_Compenecia_Empleado)
+
 );
 
 
@@ -165,54 +174,56 @@ CREATE TABLE Cursos (
     Cupos int(11) unsigned not null,
 
     PRIMARY KEY (ID_Curso)
+
 );
 
 CREATE TABLE Reuniones (
 
-    ID_Reunion
-    Titulo
-    Fecha_Hora_Inicio
-    Fecha_Hora_Fin
-    ID_Responsable
+    ID_Reunion int(11) not null auto_increment,
+    Titulo varchar(100) not null,
+    Fecha_Hora_Inicio datetime not null,
+    Fecha_Hora_Fin datetime not null,
+    ID_Responsable int(11) not null,
 
     PRIMARY KEY (ID_Reunion)
+
 );
 
 CREATE TABLE AsignacionEdificiosTemporalesRazon (
 
-    ID_Asignacion_Edificio_Temporal_Razon
-    Razon
-    Fecha_Hora_Inicio
-    Fecha_Hora_Fin
-    ID_Curso
-    ID_Reunion
-    ID_Empleado_Responsable
-
+    ID_Asignacion_Edificio_Temporal_Razon int(11) not null,
+    Razon enum("Reunion", "Curso") not null default 'Reunion',
+    Fecha_Hora_Inicio datetime not null,
+    Fecha_Hora_Fin datetime not null,
+    ID_Curso int(11) default null,
+    ID_Reunion int(11) default null,
+    ID_Empleado_Responsable int(11) not null,
 
     PRIMARY KEY (ID_Asignacion_Edificio_Temporal_Razon)
+
 );
 
 CREATE TABLE AsignacionEdificiosTemporales (
 
-    ID_Asignacion_Edificio_Temporal
-    Puesto
-    ID_Empleado
-    ID_Razon
-
+    ID_Asignacion_Edificio_Temporal int(11) not null auto_increment,
+    Puesto int(11) unsigned not null,
+    ID_Empleado int(11) not null,
+    ID_Razon int(11) not null,
 
     PRIMARY KEY (ID_Asignacion_Edificio_Temporal)
+
 );
 
 CREATE TABLE EdificioEmpleados (
 
-    ID_Edificio_Empleado
-    Puesto
-    ID_Empleado
-    Fecha_Asignacion
-    Fecha_Entrega
-
+    ID_Edificio_Empleado int(11) not null auto_increment,
+    Puesto int(11) unsigned not null,
+    ID_Empleado int(11) not null,
+    Fecha_Asignacion date not null,
+    Fecha_Entrega date not null,
 
     PRIMARY KEY (ID_Edificio_Empleado)
+
 );
 
 CREATE TABLE Hijos (
@@ -225,6 +236,7 @@ CREATE TABLE Hijos (
     Sexo varchar(100) default null,
 
     PRIMARY KEY (ID_Hijo)
+
 );
 
 CREATE TABLE IdiomasEmpleados (
@@ -235,6 +247,7 @@ CREATE TABLE IdiomasEmpleados (
     Nivel_Alcanzado enum('Básico', 'Intermedio', 'Avanzado') default 'Básico',
     
     PRIMARY KEY (ID_Idioma_Empleado)
+
 );
 
 CREATE TABLE Nomina (
@@ -248,6 +261,7 @@ CREATE TABLE Nomina (
     Fecha_Nomina date not null,
 
     PRIMARY KEY (ID_Nomina)
+
 );
 
 CREATE TABLE ProyectosEmpleados (
@@ -260,12 +274,13 @@ CREATE TABLE ProyectosEmpleados (
 
 
     PRIMARY KEY (ID_Proyecto_Empleado)
+    
 );
 
 
-----------------------------------------------------------------
+-----------------------------------------------------------------------
 
-
+-- Tabla para pruebas con XAMPP y DBeaver --
 
 CREATE TABLE prueba (
 
