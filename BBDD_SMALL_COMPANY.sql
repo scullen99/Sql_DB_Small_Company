@@ -91,16 +91,6 @@ CREATE TABLE Idiomas (
 );
 
 -- Añadir Datos a la Tabla Idiomas --
-INSERT INTO idiomas (ID_Idioma,Idioma) VALUES 
-(1,'Espanol')
-,(2,'Ingles')
-,(3,'Italiano')
-,(4,'Chino')
-,(5,'Frances')
-,(6,'Panyabi')
-,(7,'Japones')
-,(8,'Bengali')
-;
 
 -- Creación Tabla Proyectos --
 CREATE TABLE Proyectos (
@@ -211,7 +201,7 @@ CREATE TABLE AsignacionEquiposMateriales (
 
 -- Añadir Datos a la Tabla AsignacionEquiposMateriales --
 
--- Creación Tabla  --
+-- Creación Tabla CompetenciasEmpleados --
 CREATE TABLE CompetenciasEmpleados (
 
     ID_Compenecia_Empleado int(11) not null,
@@ -231,9 +221,9 @@ CREATE TABLE CompetenciasEmpleados (
 
 );
 
--- Añadir Datos a la Tabla  --
+-- Añadir Datos a la Tabla CompetenciasEmpleados --
 
--- Creación Tabla  --
+-- Creación Tabla Cursos --
 CREATE TABLE Cursos (
 
     ID_Curso int(11) not null,
@@ -251,9 +241,9 @@ CREATE TABLE Cursos (
 
 );
 
--- Añadir Datos a la Tabla  --
+-- Añadir Datos a la Tabla Cursos --
 
--- Creación Tabla  --
+-- Creación Tabla Reuniones --
 CREATE TABLE Reuniones (
 
     ID_Reunion int(11) not null auto_increment,
@@ -270,9 +260,9 @@ CREATE TABLE Reuniones (
 
 );
 
--- Añadir Datos a la Tabla  --
+-- Añadir Datos a la Tabla Reuniones --
 
--- Creación Tabla  --
+-- Creación Tabla AsignacionEdificiosTemporalesRazon --
 CREATE TABLE AsignacionEdificiosTemporalesRazon (
 
     ID_Asignacion_Edificio_Temporal_Razon int(11) not null,
@@ -287,17 +277,15 @@ CREATE TABLE AsignacionEdificiosTemporalesRazon (
 
     KEY FK_AsignacionEdificiosTemporalesRazon_1 (ID_Reunion),
     KEY FK_AsignacionEdificiosTemporalesRazon_2 (ID_Curso),
-    KEY FK_AsignacionEdificiosTemporalesRazon_3 (ID_Empleado_Responsable),
 
     CONSTRAINT FK_AsignacionEdificiosTemporalesRazon_1 FOREIGN KEY (ID_Reunion) REFERENCES Reuniones (ID_Reunion) ON DELETE NO ACTION ON UPDATE NO ACTION,
-    CONSTRAINT FK_AsignacionEdificiosTemporalesRazon_2 FOREIGN KEY (ID_Curso) REFERENCES Cursos (ID_Curso) ON DELETE NO ACTION ON UPDATE NO ACTION,
-    CONSTRAINT FK_AsignacionEdificiosTemporalesRazon_3 FOREIGN KEY (ID_Empleado_Responsable) REFERENCES Empleados (ID_Empleado_Responsable) ON DELETE NO ACTION ON UPDATE NO ACTION
+    CONSTRAINT FK_AsignacionEdificiosTemporalesRazon_2 FOREIGN KEY (ID_Curso) REFERENCES Cursos (ID_Curso) ON DELETE NO ACTION ON UPDATE NO ACTION
 
 );
 
--- Añadir Datos a la Tabla  --
+-- Añadir Datos a la Tabla AsignacionEdificiosTemporalesRazon --
 
--- Creación Tabla  --
+-- Creación Tabla AsignacionEdificiosTemporales --
 CREATE TABLE AsignacionEdificiosTemporales (
 
     ID_Asignacion_Edificio_Temporal int(11) not null auto_increment,
@@ -307,19 +295,19 @@ CREATE TABLE AsignacionEdificiosTemporales (
 
     PRIMARY KEY (ID_Asignacion_Edificio_Temporal),
 
-    KEY
-    KEY
-    KEY
+    KEY FK_AsignacionEdificiosTemporales_1 (ID_Empleado),
+    KEY FK_AsignacionEdificiosTemporales_2 (Puesto),
+    KEY FK_AsignacionEdificiosTemporales_3 (ID_Razon),
 
-    CONSTRAINT
-    CONSTRAINT
-    CONSTRAINT
+    CONSTRAINT FK_AsignacionEdificiosTemporales_1 FOREIGN KEY (ID_Empleado) REFERENCES Empleados (ID_Empleado) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    CONSTRAINT FK_AsignacionEdificiosTemporales_2 FOREIGN KEY (ID_Razon) REFERENCES AsignacionEdificiosTemporalesRazon (ID_Asignacion_Edificio_Temporal_Razon) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    CONSTRAINT FK_AsignacionEdificiosTemporales_3 FOREIGN KEY (Puesto) REFERENCES Edificio (Puesto) ON DELETE NO ACTION ON UPDATE NO ACTION
 
 );
 
--- Añadir Datos a la Tabla  --
+-- Añadir Datos a la Tabla AsignacionEdificiosTemporales --
 
--- Creación Tabla  --
+-- Creación Tabla EdificioEmpleados --
 CREATE TABLE EdificioEmpleados (
 
     ID_Edificio_Empleado int(11) not null auto_increment,
@@ -330,15 +318,15 @@ CREATE TABLE EdificioEmpleados (
 
     PRIMARY KEY (ID_Edificio_Empleado),
 
-    KEY
+    KEY FK_EdificioEmpleados_1 (ID_Empleado),
 
-    CONSTRAINT
+    CONSTRAINT FK_EdificioEmpleados_1 FOREIGN KEY (ID_Empleado) REFERENCES Empleados (ID_Empleado) ON DELETE NO ACTION ON UPDATE NO ACTION
 
 );
 
--- Añadir Datos a la Tabla  --
+-- Añadir Datos a la Tabla EdificioEmpleados --
 
--- Creación Tabla  --
+-- Creación Tabla Hijos --
 CREATE TABLE Hijos (
 
     ID_Hijo int(11) not null,
@@ -350,15 +338,15 @@ CREATE TABLE Hijos (
 
     PRIMARY KEY (ID_Hijo),
 
-    KEY
+    KEY FK_Hijos_1 (ID_Empleado),
 
-    CONSTRAINT
+    CONSTRAINT FK_Hijos_1 FOREIGN KEY (ID_Empleado) REFERENCES Empleados (ID_Empleado) ON DELETE NO ACTION ON UPDATE NO ACTION
 
 );
 
--- Añadir Datos a la Tabla  --
+-- Añadir Datos a la Tabla Hijos --
 
--- Creación Tabla  --
+-- Creación Tabla IdiomasEmpleados --
 CREATE TABLE IdiomasEmpleados (
 
     ID_Idioma_Empleado int(11) not null,
@@ -368,17 +356,17 @@ CREATE TABLE IdiomasEmpleados (
     
     PRIMARY KEY (ID_Idioma_Empleado),
 
-    KEY
-    KEY
+    KEY FK_IdiomasEmpleados_1 (ID_Idioma),
+    KEY FK_IdiomasEmpleados_2 (ID_Empleado),
 
-    CONSTRAINT
-    CONSTRAINT
+    CONSTRAINT FK_IdiomasEmpleados_1 FOREIGN KEY (ID_Idioma) REFERENCES Idiomas (ID_Idioma) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    CONSTRAINT FK_IdiomasEmpleados_2 FOREIGN KEY (ID_Empleado) REFERENCES Empleados (ID_Empleado) ON DELETE NO ACTION ON UPDATE NO ACTION
 
 );
 
--- Añadir Datos a la Tabla  --
+-- Añadir Datos a la Tabla IdiomasEmpleados --
 
--- Creación Tabla  --
+-- Creación Tabla Nomina --
 CREATE TABLE Nomina (
 
     ID_Nomina int(11) not null,
@@ -391,15 +379,15 @@ CREATE TABLE Nomina (
 
     PRIMARY KEY (ID_Nomina),
 
-    KEY
+    KEY FK_Nomina_1 (ID_Empleado),
 
-    CONSTRAINT
+    CONSTRAINT FK_Nomina_1 FOREIGN KEY (ID_Empleado) REFERENCES Empleados (ID_Empleado) ON DELETE NO ACTION ON UPDATE NO ACTION
 
 );
 
--- Añadir Datos a la Tabla  --
+-- Añadir Datos a la Tabla Nomina --
 
--- Creación Tabla  --
+-- Creación Tabla ProyectosEmpleados --
 CREATE TABLE ProyectosEmpleados (
 
     ID_Proyecto_Empleado int(11) not null,
@@ -411,46 +399,12 @@ CREATE TABLE ProyectosEmpleados (
 
     PRIMARY KEY (ID_Proyecto_Empleado),
 
-    KEY
-    KEY
+    KEY FK_ProyectosEmpleados_1 (ID_Proyecto),
+    KEY FK_ProyectosEmpleados_2 (ID_Empleado),
     
-    CONSTRAINT
-    CONSTRAINT
+    CONSTRAINT FK_ProyectosEmpleados_1 FOREIGN KEY (ID_Proyecto) REFERENCES Proyectos (ID_Proyecto) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    CONSTRAINT FK_ProyectosEmpleados_2 FOREIGN KEY (ID_Empleado) REFERENCES Empleados (ID_Empleado) ON DELETE NO ACTION ON UPDATE NO ACTION
 
 );
 
--- Añadir Datos a la Tabla  --
-
------------------------------------------------------------------------
-
--- Tabla para pruebas con XAMPP y DBeaver --
-
-CREATE TABLE prueba (
-
-    ID_Prueba int(11) not null,
-    Nombre_Prueba varchar(50) not null,
-
-);
-
--- Comandos borrar tabla, crear tabla y añadir valores --
-
-/*
-
-DROP TABLE smallcompany.prueba CASCADE;
-
-CREATE TABLE prueba (
-
-	id_prueba varchar(100) NOT NULL,
-	nombre_pruena varchar(100) NOT NULL,
-
-    PRIMARY KEY (id_prueba)
-);
-
-INSERT INTO smallcompany.prueba (id_prueba,nombre_pruena)
-	VALUES ('1','prueba 1');
-INSERT INTO smallcompany.prueba (id_prueba,nombre_pruena)
-	VALUES ('2','prueba 2');
-INSERT INTO smallcompany.prueba (id_prueba,nombre_pruena)
-	VALUES ('3','prueba 3');
-
-*/
+-- Añadir Datos a la Tabla ProyectosEmpleados --
