@@ -6,6 +6,6 @@ Creada por Sergio Esteban Tarrero
 
 - [X] Crear BBDD
 - [X] Asignación Primary Keys
-- [ ] Asignación Foreign Keys
+- [X] Asignación Foreign Keys
 - [ ] Queries
 - [ ] Diagrama ER
