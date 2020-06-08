@@ -1,15 +1,5 @@
 -- BBDD Pequeña Empresa - Sergio Esteban Tarrero --
 -- https://github.com/scullen99/bbdd_small_company.git --
--- Versión 0.5 --
-
-/* Comando entrada para XAMPP MySQL
-
-   mysql -u root
-   DROP DATABASE IF EXISTS SMALLCOMPANY;
-   CREATE DATABASE SMALLCOMPANY;
-   USE SMALLCOMPANY;
-
-*/
 
 CREATE SCHEMA SMALLCOMPANY;
 
