@@ -1,10 +1,10 @@
 INSERT INTO idiomas (ID_Idioma,Idioma) VALUES 
-(1,'Espanol')
-,(2,'Ingles')
+(1,'Español')
+,(2,'Inglés')
 ,(3,'Italiano')
 ,(4,'Chino')
-,(5,'Frances')
-,(6,'Panyabi')
-,(7,'Japones')
-,(8,'Bengali')
+,(5,'Francés')
+,(6,'Panyabí')
+,(7,'Japonés')
+,(8,'Bengalí')
 ;
