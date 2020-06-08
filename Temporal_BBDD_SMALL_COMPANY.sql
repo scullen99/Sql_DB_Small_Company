@@ -1,6 +1,6 @@
 -- BBDD Pequeña Empresa - Sergio Esteban Tarrero --
 -- https://github.com/scullen99/bbdd_small_company.git --
--- BBDD Terminada --
+-- BBDD Pruebas Terminada --
 
 CREATE SCHEMA SMALLCOMPANY;
 
