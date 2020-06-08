@@ -8,5 +8,5 @@ Creada por Sergio Esteban Tarrero
 - [X] Asignación Primary Keys
 - [X] Asignación Foreign Keys
 - [X] Añadir Datos a la BBDD
-- [ ] Queries
+- [X] Queries
 - [X] Diagrama ER
