@@ -1,6 +1,7 @@
 # BBDD Small Company
 
 Proyecto de una pequeña bbdd en SQL.
+
 El proyecto consiste en la construcción y realización de diagramas, creación de tablas y uso de queries.
 
 # Puntos:
