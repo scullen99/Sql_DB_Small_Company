@@ -1,4 +1,4 @@
-# BBDD Small Company
+# Sql DB Small Company
 
 Proyecto de una pequeña bbdd en SQL.
 
